@@ -1,0 +1,2445 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://localhost:5174/hubdignity -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="module">
+import RefreshRuntime from "/@react-refresh"
+RefreshRuntime.injectIntoGlobalHook(window)
+window.$RefreshReg$ = () => {}
+window.$RefreshSig$ = () => (type) => type
+window.__vite_plugin_react_preamble_installed__ = true
+</script>
+
+    <script type="module" src="./E-hub Agder_files/client"></script>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="http://localhost:5174/src/assets/icons/favbox.svg">
+    <title>E-hub Agder</title>
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    </style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/App.css">
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFFF2;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto";
+    overflow-x: hidden;
+}
+</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/components/Dropdown.css">
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: 160px;
+    border-radius: 0 0 5px 5px;
+    position: absolute;
+    background-color: #F3F3E5; 
+    padding: 0;
+    top: 100%;
+    list-style: none;
+}
+
+.dropdown.clicked {
+    display: none;   
+}
+
+.dropdown-item {
+    width: 100%;
+    padding: 10px 10px;
+}
+
+.dropdown-item:last-child {
+    border-radius: 0 0 5px 5px;
+}
+
+.dropdown-item:hover {
+    background-color: #d7d7c9; 
+    
+}
+
+.dropdown-link {
+    text-decoration: none;
+    color: #1B4B36;
+    width: 100%;
+}
+</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/components/Navbar.css">
+.navbar {
+    height: 60px;
+    background-color: #F3F3E5; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    padding-left: 20px;
+    padding-right: 20px;
+    z-index: 1;
+    top: 0;
+    width: 100%;   
+}
+
+.nav-logo {
+    margin-top: 6px;
+    z-index: 2;
+}
+
+.nav-menu .apply-button {
+    margin-left: auto;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0; 
+    margin: 0;
+    margin-left: 20px;
+    height: 100%;
+    width:100%;
+    color: #1B4B36;
+    font-weight: 350;
+    text-transform: uppercase;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.nav-item:hover {
+    background-color: #d7d7c9; 
+
+}
+
+.nav-item.nav-item.desktop:hover {
+    background-color: transparent; 
+}
+
+.nav-item.apply-button:hover {
+    background-color:transparent;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #1B4B36;
+    padding: 15px;
+}
+
+.nav-item.desktop {
+    padding: 25px;
+}
+
+.nav-item.desktop img{
+    height: 25px;
+}
+
+.menu-icon {
+    display: none;
+    z-index: 2;
+}
+
+.nav-item.mobile {
+    display: none;
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .navbar {
+        overflow: hidden;
+        position: fixed;
+    }
+
+    .menu-icon {
+        display: flex;
+        position: absolute;
+        right: 10px;
+        height: 30px;
+    }
+
+    .menu-icon img {
+        height: 30px;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        right: -100%;
+        position: absolute;
+    }
+
+    .nav-menu.active {
+        position: fixed;
+        background-color: #F3F3E5; 
+        top: 60px;
+        gap: 0;
+        right: 0;
+        margin: 0;
+        width: 50%;
+        height: 100%;
+        transition: right 0.4s;
+        border-top: 1px solid rgba(0, 0, 0, 0.072);
+        border-left: 1px solid rgba(0, 0, 0, 0.072);
+    }
+
+    .nav-item {
+        max-height: 50px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-item.mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: #F3F3E5; 
+    }
+
+    .nav-item.mobile img {
+        height: 25px;
+    }
+
+    .nav-link.mobile {
+        height: 100%;
+        width: 100%;
+    }
+
+    .nav-link.mobile:hover {
+        background-color: #d7d7c9; 
+    }
+
+    .nav-item.desktop {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .navbar {
+        overflow: hidden;
+        position: fixed;
+    }
+
+    .nav-menu.active {
+        position: fixed;
+        gap: 0;
+        right: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        transition: right 0.4s;
+    }
+}</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/components/Button.css">.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    color: #1B4B36;
+    font-family: "Roboto";
+    font-size: 1em;
+    white-space: nowrap;
+    font-weight: 350;
+}
+
+.btn:hover {
+    cursor: pointer; 
+}
+
+.btn.white {
+    background-color: #FFFFF2;
+    color: #1F573F;
+}
+
+.btn.blue {
+    background-color: #002f34;
+    color: #fff;
+}
+
+.btn.green {
+    background-color: #1F573F;
+    color: #fff;
+}
+
+.btn.light-green {
+    background-color: #CFEE91;
+    color: #1F573F;
+}
+</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/components/Footer.css">.footer {
+    background-color: #092A35;
+    color: white;
+    display: flex;
+    padding: 0 7.5% 0 7.5%;
+    box-sizing: border-box;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    justify-content: center;
+  }
+  
+  .footer p,
+  .footer ul,
+  .footer a {
+      font-weight: 350;
+    }
+
+  .footer h3 {
+    font-weight: 450;
+    font-size: 18px;
+    margin-top:0px;
+    margin-bottom: 5px;
+  }
+
+  .footer p {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  
+  .footer-links a {
+    color: white;
+  }
+
+  .footer-links li {
+    margin-bottom: 5px;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  
+  .footer-column {
+    flex: 1;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 5%;
+    flex: 1;
+    max-width: 1600px;
+  }
+
+  .footer-column button{
+    margin-top:10px;
+  }
+
+  .footer-box {
+    position: absolute;
+    right: 370px;
+    bottom:0px;
+    height: 65%;
+
+  }
+  
+  @media (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .footer-column {
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .footer-links {
+      flex-direction: column;
+    }
+  }
+  </style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/components/PriceTable.css">.price-table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.price-table {
+    -webkit-border-horizontal-spacing: 0;
+    -webkit-border-vertical-spacing: 0;
+    border-collapse: collapse;
+    color: white;
+    max-width: 100%;
+}
+
+.price-table td {
+    padding: 10px 25px;
+    border-bottom: 0.1px solid rgba(255, 255, 255, 0.2);
+}
+
+.table-col {
+    max-width: 260px;
+}
+
+.table-head {
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-family: "Archivo"; 
+    letter-spacing: 0.8px;
+}
+
+.table-head th {
+    padding: 15px 25px;
+    font-weight: 600;
+}
+
+.col-one.head {
+    text-align: left;
+}
+
+.col-one {
+    background-color: #1f573f;
+}
+
+.col-info {
+    background-color: #1f573f;
+}
+
+.col-info img {
+    padding: 0;
+}
+
+.col-alt {
+    background-color: #51815a;
+    text-align: center;
+}
+
+.col-three {
+    background-color: #285D47;
+    text-align: center;
+}
+
+.final-row {
+    border: 0;
+}
+
+@media screen and (max-width: 960px) {
+    .price-table-container {
+        font-size: 0.8750em;
+    }
+
+    .price-table {
+        width: 100%;
+    }
+
+    .table-head {
+        letter-spacing: 0;
+    }
+
+    .table-head th{
+        padding: 10px 10px;
+        font-weight: 500;
+    }
+
+    .table-col {
+        width: 160px;
+    }
+    
+    .final-row {
+        display: none;
+    }
+
+    .col-info {
+        display: none;
+    }
+
+    .price-table td {
+        padding: 10px 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .table-head th{
+        padding: 8px 3px;
+        font-weight: 400;
+    }
+
+    .price-table td {
+        padding: 8px 5px;
+        font-weight: 300;
+    }
+}</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/components/Tooltip.css">.tooltip-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip-box {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    color: #fff;
+    background-color: #333;
+    border-radius: 4px;
+    z-index: 1000;
+    white-space: nowrap;
+    font-size: 14px;
+  }
+  
+  .tooltip-box::after {
+    content: ' ';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+  }
+  </style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/pages/Home.css">/*video-seksjon*/
+.video-section {
+    background-color: #fffff2;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+}
+
+.video-section-left-column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 7.5%;
+}
+
+.video-section-right-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.home-image {
+    width: 70%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.video-section-row {
+    width: 80%;
+    margin-top: 20px;
+}
+
+.video-section-title {
+    letter-spacing: 1.05px;
+    font-family: "Archivo";
+    font-weight: 850;
+    font-size: 28px;
+    color: #124151;
+}
+
+.video-section-subtitle {
+    letter-spacing: 1.05px;
+    font-family: "Archivo";
+    font-weight: 200;
+    font-size: 20px;
+    color: #124151;
+}
+
+.video-section-text {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: "Roboto";
+    font-weight: 350;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 60%;
+    margin-right: 0px;
+    z-index: 0;
+}
+
+.video-frame {
+    position: absolute;
+    width: 40%;
+    margin-top: -15px;
+    margin-right: -20px;
+    z-index: 0;
+}
+
+.video-points {
+    width: 100%;
+    height: 220px;
+    background-color: #4b7854;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.video-points-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fffff2;
+    font-family: "Roboto";
+    width: 300px;
+}
+
+.video-points-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.video-points-text {
+    font-weight: 350;
+}
+
+
+/*pristabell seksjon*/
+.price-table-section {
+    width: 100%;
+    height: 750px;
+    background-color: #1F573F;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.price-table-title {
+    letter-spacing: 1.05px;
+    font-family: "Archivo";
+    font-weight: 850;
+    font-size: 28px;
+    color: #fffff2;
+}
+
+.price-table-subtitle {
+    font-family: "Roboto";
+    font-weight: 350;
+    font-size: 16px;
+    color: #fffff2;
+    width: 350px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/*hero-seksjon*/
+.home-hero {
+    height: 550px;
+    background-color: #1F573F;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.home-hero-left-column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    justify-content: center;
+}
+
+.home-hero-right-column {
+    width: 50%;
+    overflow: hidden;
+}
+
+
+/*hero video hvis vi vil bruke den*/
+.hero-video {
+    width: 200%;
+    height: 100vh;
+    display: block;
+    object-fit: cover;
+}
+
+
+.home-hero-title-white {
+    color: #fffff2;
+    letter-spacing: 1.05px;
+    font-family: "Archivo";
+    font-weight: 850;
+    font-size: 45px;
+}
+
+.home-hero-title-green {
+    color: #CFEE91;
+    letter-spacing: 1.05px;
+    font-family: "Archivo";
+    font-weight: 850;
+    font-size: 45px;
+    margin-bottom: 30px;
+}
+
+.home-hero-subtitle {
+    color: #fffff2;
+    font-family: "Archivo";
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.home-hero-text {
+    color: #fffff2;
+    font-family: "Roboto";
+    font-size: 17px;
+    margin-bottom: 20px;
+    font-weight: 350;
+}
+
+.green-text {
+    color: #CFEE91;
+    font-weight: 500;
+}
+
+.home-hero-banner {
+    height: 70px;
+    width: 100%;
+    background-color: #598662;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+/*fordeler seksjon*/
+.benefits-section-new {
+    height: fit-content;
+    width: 100%;
+    background-color: #FFFFF2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.benefits-title {
+    font-family: "Archivo";
+    font-weight: 850;
+    font-size: 28px;
+    color: #092A35;
+}
+
+.benefits-subtitle {
+    font-weight: 350;
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #092A35;
+    width: 35%;
+    text-align: center;
+}
+
+.benefits-cards {
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
+
+.benefits-card {
+    height: 300px;
+    width: 400px;
+    padding: 2%;
+}
+
+.benefits-header { 
+    letter-spacing: 1.05px;
+    margin-bottom: 2%; /* Legger til plass mellom headeren og rutenettet */
+  }
+
+.benefit-subheader{
+    text-align: center;
+    letter-spacing: 0.05px;
+    font-family: "Archivo";
+    font-weight: 500;
+    font-size: 18px;
+    color: #092A35;
+}
+.benefit-content {
+    text-align: center;
+    color: #092A35;
+    font-weight: 350;
+}
+
+.benefits-contact-card {
+    height: 250px;
+    width: 380px;
+    background-color: #092A35;
+    padding: 2%;
+    border-radius: 10px;
+    margin-top: 2%;
+    font-family: "Archivo";
+    color: #FFFFFF;
+}
+
+.benefit-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-card-section {
+    width: 100%;
+    height: fit-content;
+    background-color: #F3F3E5;
+  }
+
+
+/*reponsivt*/
+@media screen and (max-width: 1430px) {
+
+    .home-hero-title-white {
+        font-size: 35px;
+    }
+    .home-hero-title-green {
+        font-size: 35px;
+    }
+
+    .home-hero-subtitle {
+        font-size: 18px;
+    }
+    .home-hero-text {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 1350px) {
+    .benefits-contact-card {
+        margin-left: 2%;
+    }
+}
+@media screen and (max-width: 1080px) {
+    .video-section {
+        height: fit-content;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .home-hero-row {
+        padding-right: 0px;
+    }
+
+    .home-hero {
+        height: fit-content;
+    }
+    .home-hero-left-column {
+        width: 100%;
+    }
+    .home-hero-right-column {
+        display: none;
+    }
+
+    .home-hero-banner-logo {
+        width: 80%;
+    }
+    .video-section {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+    .video-section-left-column {
+        width: 100%;
+        padding-bottom: 60px;
+        padding-top: 40px;
+    }
+    .video-section-right-column {
+        width: 100%;
+    }
+    .video-section-row {
+        width: 80%;
+    }  
+    .video-points-column {
+        margin-right: 20px;
+    }
+    .video-points {
+        display: flex;
+        flex-direction: row;
+        padding-left: 40px;
+        padding-right: 20px;
+    }
+
+    .home-image {
+        height: 350px;
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 782px) {
+
+    .benefits-subtitle {   
+        width: 75%;
+    }
+    .video-points {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        gap:40px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        padding-left: 7.5%;
+        padding-right: 7.5%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .video-section {
+        height: 900px;
+    }
+    .video-section-row {
+        width: 90%;
+    }
+
+    .price-table-subtitle {
+        width: 300px;
+    }
+
+    .benefits-card {
+        width: 90%;
+    }
+    .benefits-contact-card {
+        width: 90%;
+        height: 98%;
+    }
+    .video-points {
+        padding-top: 50px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+     .video-points {
+        padding-top: 150px;
+    }
+}
+</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/components/ContactCard.css">.contact-card-body {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+    padding-top:60px;
+    padding-bottom:60px;
+}
+
+.contact-card-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    height: 250px;
+    
+}
+.contact-card-title {
+    margin-top: 0px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "archivo";
+    color: #222222;
+}
+.contact-card-text, .contact-card-email {
+    font-size: 16px;
+    font-family: "Roboto";
+    font-weight: 350;
+    margin-bottom: 0px;
+    margin-top:15px;
+}
+
+.contact-card-content {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.contact-card-image {
+    width: 200px;
+    margin-bottom: 0px;
+    height: 250px;
+}
+
+.contact-card-person-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    border: solid 1px #00000026;
+}
+
+.contact-card-socials {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.social-box {
+    background-color: #1F573F;
+    width: fit-content;
+    height: fit-content;
+    padding: 8px 8px 5px 8px;
+    margin-right: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.social-icon {
+    width: 30px;
+}
+
+@media screen and (max-width: 500px) {
+    .contact-card-body {
+        flex-direction: column;
+    }
+
+    .contact-card-info {
+        padding-left: 0px;
+    }
+
+    .contact-card-image {
+        height: 400px;
+        width: 100%;
+    }
+
+    .contact-card-title{
+        padding-top: 20px;
+    }
+}</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/pages/About.css">
+
+.white-container {
+    background-color: #FFFFF2;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+}
+
+.green-container {
+    background-color: #1B4B36;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FFFFF2;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.page-one-left-column {
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+    width: 50%;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    height:fit-content;
+}
+
+
+.page-one-left-column p {
+    font-weight: 350;
+    margin-bottom: 20px;
+    margin-top:0px;
+}
+
+.page-one-right-column {
+    width: 50%;
+    overflow: hidden;
+}
+
+.page-two-heading {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 7.5% 0 7.5%;
+}
+
+.page-two-heading p {
+   font-weight: 350;
+}
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin: 0 20px 0 20px;
+}
+
+.agder-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    max-height: 775px;
+}
+
+.hubs-headline {
+    font-size: 28px;
+    font-family: "Archivo";
+    font-weight: 850;
+    color: #1B4B36;
+    letter-spacing: 1.05px;
+    margin-bottom: 20px;
+}
+
+.collab-headline {
+    font-size: 28px;
+    font-family: "Archivo";
+    font-weight: 850;
+    color: #FFFFF2;
+    letter-spacing: 1.05px;
+}
+
+.our-history-headline
+{
+  font-weight: 200;
+  font-size: 20px;
+  margin-top: 0px;
+  margin-bottom: 40px;
+  font-family: "Archivo";
+  letter-spacing: 1.05px;
+}
+
+
+@media (max-width: 1600px) {
+  .cards {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 960px) {
+    .white-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .page-one-right-column {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    
+    .agder-image {
+        height: 400px;
+    }
+
+    .page-one-left-column {
+        width: 100%;
+        padding-top: 100px;
+    }
+
+    .collab-headline {
+        font-size: 22px;
+    }
+}</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/components/CollaboratorsCard.css">.collaborators-card {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 20px;
+    width: 280px;
+    height: 120px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s;
+    background-color: white;
+}
+
+.collaborators-card:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+  cursor: pointer;
+}
+</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/components/HubComponent.css">.hero {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.hero-left-column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-top:120px;
+    padding-bottom:60px;
+    height: 100%;
+}
+
+.hero-right-column {
+    width: 50%;
+}
+
+.company-title {
+    letter-spacing: 5px;
+    font-family: "Archivo";
+    color: #092A35;
+    margin-bottom: 30px;
+}
+
+.company-desc { 
+    font-family: "Archivo";
+    line-height: 1.25;
+    font-weight: 350;
+}
+
+.hero-row {
+    width: 100%;
+    padding-right: 40px;
+    padding-left: 15%;
+}
+
+.company-logo {
+    max-width: 100px;
+}
+
+.company-image {
+    width: 100%;
+    height: 400px;
+    display: block;
+    object-fit: cover;
+}
+
+.hub-banner {
+    width: 100%;
+    background-color: #3f6c48;
+    height: 30px;
+}
+
+.contact-section-hub {
+    height: fit-content;
+    background-color: #FFFFF2;
+}
+
+
+@media screen and (max-width: 960px) {
+
+    .company-title {
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        padding: 0 0 0 0;
+        height: fit-content;
+    }
+    
+    .company-image {
+        max-height: 250px;
+    }
+    .hero-right-column {
+        width:100%
+    }
+
+    .hero-left-column {
+        width:100%;
+        padding-top :60px;
+        padding-bottom :60px;
+
+    }
+
+    .hero-row {
+        width: 100%;
+        padding-left: 7.5%;
+        padding-right: 7.5%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .company-title {
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+}
+
+/* Section2 (What do we want, contactperson, what we offer, send application) */
+
+.hub-wrapper {
+   width: 85%;
+   margin: 0 auto;
+   max-width: 1600px;
+   display: flex;
+   flex-direction: row;
+}
+
+.hub-green-section {
+   background-color: #1F573F;
+   height: fit-content;
+}
+
+.hub-right-column {
+    width: 50%;
+ }
+
+ .hub-left-column {
+    width: 50%;
+    color: white;
+    padding-right:40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+ }
+
+ .hub-wants-title
+ {
+    letter-spacing: 1.05px;
+    font-size: 28px;
+    color: #ffffff;
+    font-family: "Archivo";
+    font-weight: 850;
+    margin-bottom: 40px;
+    margin-top:0px;
+ }
+
+ .hub-wants-description
+ {
+    font-family: "Roboto";
+    font-weight: 350;
+ }
+ 
+.hub-contact-title
+{
+    font-family: "Roboto";
+    font-weight: 500;
+    margin-top:40px;
+ }
+
+
+ @media screen and (max-width: 810px) {
+    .hub-wrapper {
+        flex-direction: column;
+     }
+
+     .hub-left-column {
+        width: 100%;
+        padding-right: 0px;
+     }
+
+     .hub-right-column {
+        width: 100%;
+
+     } 
+}
+ 
+
+/* collaborators section */
+
+.hub-width {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 1600px;
+ }
+
+.collaborators-section {
+    background-color: #1F573F;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.collaborators-row {
+    margin-top: 60px;
+}
+
+.collaborators-title {
+    letter-spacing: 1.05px;
+    font-size: 28px;
+    color: #FFFFF2;
+    font-family: "Archivo";
+    font-weight: 850;
+    text-align: center;
+}
+ 
+.collaborators-cards-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+  
+}
+
+.collaborators-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    
+}
+</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/components/SinglePricetable.css">.single-price-table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    padding-top: 60px;
+    padding-bottom:60px;
+
+
+}
+
+.single-price-table {
+    -webkit-border-horizontal-spacing: 0;
+    -webkit-border-vertical-spacing: 0;
+    border-collapse: collapse;
+    color: white;
+    width: 100%;
+}
+
+.single-price-table td {
+    padding: 10px 25px;
+    border-bottom: 0.1px solid rgba(255, 255, 255, 0.2);
+}
+
+.single-table-col {
+    max-width: 260px;
+}
+
+.single-table-head {
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-family: "Archivo"; 
+    letter-spacing: 0.8px;
+}
+
+.single-table-head th {
+    padding: 0px 0 15px 25px;
+    font-weight: 600;
+}
+
+.single-col-one.single-head {
+    text-align: left;
+}
+
+.single-col-one {
+    background-color: #1f573f;
+}
+
+.single-col-info {
+    background-color: #1f573f;
+}
+
+.single-col-info img {
+    padding: 0;
+}
+
+.single-col-alt {
+    background-color: #51815a;
+    text-align: center;
+}
+
+.single-col-three {
+    text-align: center;
+}
+
+.single-final-row {
+    border: 0;
+}
+
+@media screen and (max-width: 960px) {
+    .single-price-table-container {
+        font-size: 0.8750em;
+    }
+
+    .single-price-table {
+        width: 100%;
+    }
+
+    .single-table-head {
+        letter-spacing: 0;
+    }
+
+    .single-table-head th{
+        padding: 0px 0 10px 10px;
+        font-weight: 500;
+    }
+
+    .single-table-col {
+        width: 160px;
+    }
+    
+    .single-final-row {
+        display: none;
+    }
+
+    .single-col-info {
+        display: none;
+    }
+
+    .single-price-table td {
+        padding: 10px 10px;
+    }
+}
+
+@media screen and (max-width: 810px) {
+
+    .single-price-table-container {
+        padding-top: 0px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .single-table-head th{
+        padding: 8px 3px;
+        font-weight: 400;
+    }
+
+    .single-price-table td {
+        padding: 8px 5px;
+        font-weight: 300;
+    }
+}</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/components/Form.css">.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+
+.text-row {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 55%;
+    margin-top: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    height: fit-content;
+    width: 80%;
+    margin-top: 50px;
+    margin-left: 25%;
+}
+
+.form-title {
+    font-family: "Archivo";
+    letter-spacing: 1.05px;
+    font-weight: 800;
+    font-size: 28px;
+    color: #124151;
+}
+
+.form-text {
+    font-family: "Roboto";
+    font-weight: 600;
+}
+
+.top-row {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 70%;
+}
+
+.bottom-row {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 10px;
+    align-items: left;
+    width: 70%;
+}
+
+.column-left {
+    text-align: left;
+    margin-right: 10%;
+}
+
+.column-right{
+    text-align: left;
+}
+
+.top-field {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "Roboto";
+}
+
+.top-label {
+    font-family: "Roboto";
+    font-size: 1em;
+}
+
+.bottom-row {
+    margin-bottom: 15px;
+}
+
+.bottom-field {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    font-family: "Roboto";
+    font-size: 1em;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.bottom-label {
+    font-size: 1em;
+}
+
+input[type="text"],
+textarea,
+select {
+    font-family: "Roboto";
+    font-size: 1em;
+}
+
+.checkbox-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: baseline;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.checkbox {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.checkbox-button {
+    margin-right: 5px;
+    margin-left: 50px;
+    width: 20px;
+    height: 20px;
+}
+
+.checkbox-button:hover {
+  cursor: pointer;
+  background-color: darkgrey;
+}
+
+.form-button {
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #1B4B36;
+    font-family: "Roboto";
+    font-size: 1em;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.form-button:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 960px) {
+    .container {
+        height: 1550px;
+        padding-top: 50px;
+    }
+    .text-row {
+        width: 70%;
+    }
+    .form {
+        width: 100%;
+        margin-left: 20%;
+    }
+    .top-row {
+        width: 80%;
+    }
+    .bottom-row {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .container {
+        height: 1850px;
+    }
+    .top-row {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 80%;
+    }
+    .column-left {
+        margin-right: 0;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .container {
+        height: 1900px;
+        padding-top: 20px;
+    }
+    .text-row {
+        width: 85%;
+    }
+    .form-title {
+        font-size: 24px;
+    }
+
+}
+</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/components/Popup.css">.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  z-index: 999; /* Ensure the overlay is behind the dialog box */
+}
+
+.confirmation-popup {
+  position: fixed;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.confirmation-popup-title, .success-popup-title {
+  font-size: 22px;
+  font-family: "Archivo";
+  font-weight: 600;
+}
+
+.popup-button-field {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-confirm, .button-cancel {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-family: "Roboto";
+  font-size: 1em;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-right: 10px;
+  background-color: #1F573F;
+}
+
+.button-cancel {
+  background-color: #922D2D;
+}
+
+.button-confirm:hover {
+  background-color: #163b2b;
+  cursor: pointer;
+}
+
+.button-cancel:hover {
+  background-color: #682020;
+  cursor: pointer;
+}
+
+.success-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.success-popup-field {
+  display: flex;
+  justify-content: end;
+}
+
+.success-popup-button {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-family: "Roboto";
+  font-size: 1em;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-right: 10px;
+  background-color: #092A35
+}
+
+.success-popup-button:hover {
+  background-color: #04141a;
+  cursor: pointer;
+}</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/pages/Applications.css">.grid-container {
+    display: grid;
+    grid-template-columns: minmax(200px, 0.3fr) 1fr;
+    gap: 40px; 
+  }
+
+.applications-page {
+    width: 100%;
+    gap: 50px;
+    height: fit-content;
+    min-height: 600px;
+    padding: 120px 7.5% 120px 7.5%;
+    max-width: 1600px; 
+    margin: 0 auto;
+}
+
+.grid-applications-one a {
+    color: #002f34;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.application-page-title {
+    color: #092A35;
+    margin-top:0px;
+}
+  
+  .application-desc {
+    flex: 1;
+    margin-top:0px;
+    margin-bottom: 14px;
+    font-size: 16px;
+  }
+
+.application-filter {
+    height: fit-content;
+    background-color: #fff;
+    border: 2px solid #C9D4DC;
+    border-radius: 7px;
+    margin-bottom: 30px;
+}
+
+.filter-name {
+    color: #092A35;
+}
+
+.grid-applications label {
+   display: block;
+    margin-bottom: 15px; 
+}
+
+.application-search {
+    width: 100%;
+    margin-bottom: 30px;
+    font-family: "Roboto";
+    font-size: 1em;
+    background-color: #FFFFF2; 
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    padding:10px;
+}
+.input-wrapper input:focus {
+  border-color: #092A35;
+}
+
+.filter-row-top {
+    background-color: #FFFFFF; 
+    height: 40px;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-left: 5px solid #092A35;
+    border-bottom: 2px solid #C9D4DC;
+    padding:10px;
+}
+
+.filter-row-bottom {
+    background-color: #FFFFFF; 
+    height: 40px;
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-left: 5px solid #092A35;
+    padding:10px;
+}
+
+.filter-row-top:hover, .filter-row-bottom:hover {
+    cursor: pointer;
+    background-color: #ebede2;
+}
+
+.filter-row-top.active, .filter-row-bottom.active {
+  background-color: #dbdcdc;
+}
+
+.applications-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 30%;
+    margin-bottom: 4%;
+}
+
+.grid-applications-one {
+    height: 100px;
+}
+
+.grid-applications-two {
+    height: 100px;
+}
+
+/*preview*/
+
+.application-preview {
+    background-color: #fff;
+    border: 2px solid #C9D4DC;
+    width: 100%;
+    border-radius: 7px;
+    margin-bottom: 2%;
+    cursor: pointer;
+}
+
+.application-preview-text {
+    margin: 0 0 15px 15px;
+}
+
+.requested {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #092A35;
+    border-radius: 5px 5px 0 0;
+    cursor: default;
+    padding: 0 15px 0 15px;
+}
+
+.requested-hub-name{
+    color: #fff;
+}
+
+.name-time {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.timeago {
+    margin-right: 15px;
+}
+
+.application-name {
+    font-size: 1.125em;
+    margin: 15px 0 0 15px;
+}
+
+.title-text {
+    font-weight: 500;
+    margin: 0;
+    padding-left: 15px;
+}
+
+/*sortering style*/
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 10px 10px 10px 10px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  background-color: #F0F0E3;
+  border: 0px;
+  width: 100%;
+}
+
+/* Style for the arrow icon */
+.select-wrapper::after {
+  content: "\25BC"; /* Unicode character for down arrow */
+  position: absolute;
+  top: 73%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #666;
+}
+
+/* Hover effect for the select element */
+.select-wrapper:hover select {
+  border-color: #aaa;
+}
+
+/* Focus effect for the select element */
+.select-wrapper select:focus {
+  border-color: #092A35;
+}
+
+/* Style for the options within the dropdown */
+.select-wrapper select option {
+  background-color: #fff;
+  color: #333;
+  font-family: Roboto, sans-serif; 
+  font-size: 14px; /* Specify the desired font size */
+}
+
+/* Style for the dropdown when it's open */
+.select-wrapper select:focus ~ .options {
+  max-height: 200px; /* Adjust max-height as needed */
+  overflow-y: auto;
+}
+
+/* Hide the default dropdown arrow */
+.select-wrapper select::-ms-expand {
+  display: none;
+}
+
+@media (max-width: 810px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+      }   
+
+      .grid-applications-two {
+        height:50px;
+      }   
+
+      .grid-applications-one {
+        height:60px;
+      }   
+}
+
+@media (max-width: 890px) {
+    .application-desc {
+        font-size: 14px;
+        margin-bottom: 16px;
+      }   
+}
+</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/components/ApplicationModal.css">.modal-container {
+    overflow-x: hidden;
+    background-color: #fff;
+    width: 50%;
+    border: 1px solid #C9D4DC;
+    border-radius: 5px;
+    padding: 0;
+}
+
+.modal-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #092A35;
+}
+
+.modal-requested {
+    display: flex;
+    flex-direction: row;
+    margin-left: 4%;
+    align-items: center;
+    color: #fff;
+}
+
+.modal-hub {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 5px;
+    color: #092A35;
+}
+
+.modal-body {
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.modal-subheader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-timeago {
+    margin-top: 15px;
+}
+
+.modal-name-website {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: -15px;
+}
+
+.modal-website {
+    font-style: italic;
+}
+
+.modal-contact-name {
+    font-weight: 500;
+    font-size: 1.125em;
+    margin-bottom: -7px;
+}
+
+.modal-field-name {
+    font-weight: 500;
+    margin-bottom: -10px;
+}
+
+.modal-contact-info {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: -16px;
+}
+
+.modal-btn-close {
+    background-color: transparent;
+    border: 0;
+    margin-right: 2%;
+}
+
+.modal-btn-close img {
+    width: 27px;
+    height: 27px;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(122deg) brightness(101%) contrast(105%);
+}
+
+.modal-btn-close:hover {
+    cursor: pointer;
+}
+
+.modal-archive-button {
+    padding-bottom: 2%;
+}
+
+.modal-closed {
+    display: none;
+}
+
+@media screen and (max-width: 960px) {
+
+    .modal-container {
+        width: 90%;
+    }
+
+}</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/components/ArchiveButton.css">.archive-button {
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+    background-color: #e9e9e9;
+    color: #092A35;
+    border: none;
+    border-radius: 5px;
+    font-family: "Roboto";
+    font-size: 1em;
+}</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/pages/Myprofile.css">.profile-container {
+  display: flex;
+  flex-direction: column;
+  padding: 120px 7.5% 120px 7.5%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 480px;
+  color: #002f34;
+}
+
+.input-field-profile{
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  padding: 10px 10px;
+  border: 1px solid #454444;
+  border-radius: 5px;
+  background-color: #F0F0E3;
+  font-size: 14px; 
+  height: 50px;
+}
+
+.save-button {
+  background-color: #092A35; 
+  color: #FFFFF2;
+  margin: 10px 0;
+  border: none;
+  width: 150px;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-family: "Roboto";
+  font-size: 1em;
+  font-weight:350;
+}
+
+.save-button:hover {
+  background-color: #2a6247;
+}
+
+.profile-container a {
+  color: #000000;
+  display: block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-decoration: underline;
+}
+</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/pages/MyPage.css">.Mypage{
+    padding: 150px 7.5% 400px 7.5%;
+    margin:0 auto;
+    max-width: 1600px;
+}
+
+    .Mypage h1 {
+        font-family: 'Archivo';
+        color: #092A35;
+        font-size: 38px;
+        padding-top: 30px;
+        padding-left:1.5%;
+      
+    }
+
+    .mypage-btn {
+        background-color: #092A35;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        padding-top: 10%;
+        cursor: pointer;
+        margin-left: 6%;
+        margin-right: 6%;
+        margin-bottom: 8%;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-property: box-shadow, transform;
+            transition-property: box-shadow, transform;
+    }
+
+    .mypage-btn:hover, .mypage-btn:focus, .mypage-btn:active {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    .mypage-btn img {
+        height: 40px;
+        width: auto;
+    }
+
+    .mypage-btn p {
+        text-align: center;
+        font-family: 'roboto';
+        font-weight: 400;
+        font-size: 16px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+
+
+
+</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/pages/CreateUser.css">.register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 7.5% 120px 7.5%;
+    color: #002f34;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.return-link {
+    color: #002f34;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.register-container h1{
+    color: #002f34;
+}
+
+.register-desc {
+    font-weight: 400;
+}
+
+.register-disclaimer {
+    font-weight: bold;
+}
+
+.register-input-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    padding-top: 10px;
+}
+
+.register-field {
+    padding: 10px 0 10px 10px;
+    font-size: 14px;
+    border: 1px solid #454444;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #F0F0E3;
+    height: 50px;
+}
+
+.register-field-label {
+    font-size: 14px;
+    color: #092A35;
+    margin-bottom: 5px;
+}
+
+.register-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-family: "Roboto";
+    font-size: 1em;
+    font-weight: 350;
+    white-space: nowrap;
+    background-color: #092A35;
+    color: #FFFFF2;
+}
+
+.select-hub-container {
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+}
+
+.select-hub {
+    padding: 5px;
+    margin-bottom: 20px;
+    font-family: "Roboto";
+    font-weight: 300;
+}
+
+.select-hub-option {
+    appearance: none;
+    font-family: Roboto, sans-serif;
+    color: #002f34;
+    background-color: #F0F0E3;
+}
+
+
+
+</style><style type="text/css" data-vite-dev-id="/Users/julielarsen/Desktop/Bachelorprosjekt/ehubagder/src/pages/Login.css">
+.login-container {
+    padding: 120px;
+    display: flex;
+    max-width: 1600px;
+    } 
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    width:480px;
+}
+  
+  .input-field-login {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px 10px;
+    border: 1px solid #454444;
+    border-radius: 5px;
+    background-color: #F0F0E3;
+    font-size: 14px; 
+    height: 50px;
+  }
+  
+  .login-button {
+    background-color: #092A35; 
+    color: #FFFFF2;
+    margin: 10px 0;
+    border: none;
+    width: 150px;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-family: "Roboto";
+    font-size: 1em;
+    font-weight:350;
+
+  }
+  
+  .login-button:hover {
+    cursor: pointer;
+  }
+  
+ .login-container a {
+    color: #000000;
+    display: block;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: 350px;
+  }
+  
+  </style></head>
+  
+    
+
+  <body>
+    <div id="root"><nav data-testid="navbar" class="navbar"><a class="nav-logo" href="http://localhost:5174/"><img src="./E-hub Agder_files/ehubagderlogo.svg" alt="E-hub Agder logo"></a><div data-testid="nav-menu-icon" class="menu-icon"><img src="./E-hub Agder_files/menu.svg" alt="meny"></div><ul data-testid="nav-menu" class="nav-menu"><li class="nav-item"><a data-testid="nav-link-home" class="nav-link" href="http://localhost:5174/"> Hjem </a></li><li class="nav-item"><a data-testid="nav-link-about" class="nav-link" href="http://localhost:5174/about"> Om oss </a></li><li data-testid="nav-dropdown" class="nav-item desktop"><p>Våre hubber</p> <img src="./E-hub Agder_files/arrow-drop-down-line.svg" alt="ikon"></li><li class="nav-item mobile"><p>Våre hubber</p> <img src="./E-hub Agder_files/arrow-drop-down-line.svg" alt="ikon"></li><li class="nav-item mobile"><a class="nav-link mobile" href="http://localhost:5174/hubdignity">Dignity Collective</a></li><li class="nav-item mobile"><a class="nav-link mobile" href="http://localhost:5174/hubjdd">JDD Utstyr</a></li><li class="nav-item apply-button"><a href="http://localhost:5174/apply"><button class="btn green">Send søknad</button></a></li></ul></nav><div class="hero"><div class="hero-left-column"><div class="hero-row"><img class="company-logo" src="./E-hub Agder_files/dignitycollectivelogo.jpg" alt="Dignity Collective logo"></div><div class="hero-row"><p class="company-desc">Dignity Collective består av dyktige fagfolk som støtter ambisiøse skapere til å utvikle egne produktserier og merkevarer.
+        Vi hjelper til med konsept- og produktutvikling, finansiering, produksjon, logistikk, distribusjon med mer..</p></div><div class="hero-row"><div class="hub-website-button"><a href="https://www.dignitycollective.no/"><button data-testid="hub-website-button" class="btn green">Besøk vår nettide</button></a></div></div></div><div class="hero-right-column"><img class="company-image" src="./E-hub Agder_files/dignitycollectiveimage.png" alt="Dignity Collective bilde"></div></div><div class="hub-banner"></div><div class="hub-green-section"><div class="hub-wrapper"><div class="hub-left-column"><h1 class="hub-wants-title">HVA SER VI ETTER?</h1><p class="hub-wants-description">Vi søker å samarbeide med bedrifter som deler vårt fokus på bærekraft, kvalitet og innovasjon. Vi ser spesielt etter bedrifter som tilbyr spesialiserte produkter med et klart miljømessig formål.</p><p class="hub-wants-description">I tillegg verdsetter vi håndverk og dedikasjon til kvalitet, og ønsker å samarbeide med bedrifter som tilbyr unike produkter laget med omhu og oppmerksomhet på detaljer.</p><p class="hub-contact-title">Høres dette ut som noe for deg?</p><div class="hub-apply-button"><a href="http://localhost:5174/apply"><button data-testid="hub-apply-button" class="btn light-green">Send søknad</button></a></div></div><div class="hub-right-column"><div class="single-price-table-container"><table class="single-price-table"><thead><tr class="single-table-head"><th class="single-table-col single-col-one single-head">Fasiliteter</th><td class="single-table-col single-col-info"></td></tr></thead><tbody><tr><td class="single-table-col single-col-one">Kontor</td><td class="single-table-col single-col-info"><div class="tooltip-container"><img src="./E-hub Agder_files/info.svg" alt="info"></div></td><td class="single-table-col single-col-alt">Fra 400 NOK,-</td></tr><tr><td class="single-table-col single-ol-one">Lagerplass</td><td class="single-table-col single-col-info"><div class="tooltip-container"><img src="./E-hub Agder_files/info.svg" alt="info"></div></td><td class="single-table-col single-col-alt">Fra 400 NOK,-</td></tr><tr><td class="single-table-col single-col-one">Møterom</td><td class="single-table-col single-col-info"><div class="tooltip-container"><img src="./E-hub Agder_files/info.svg" alt="info"></div></td><td class="single-table-col single-col-alt">Fra 400 NOK,-</td></tr><tr><td class="single-table-col single-col-one">Podkaststudio</td><td class="single-table-col single-col-info"><div class="tooltip-container"><img src="./E-hub Agder_files/info.svg" alt="info"></div></td><td class="single-table-col single-col-alt">Fra 400 NOK,-</td></tr><tr><td class="single-table-col single-col-one">Fotostudio</td><td class="tsingle-able-col single-col-info"><div class="tooltip-container"><img src="./E-hub Agder_files/info.svg" alt="info"></div></td><td class="single-table-col single-col-alt">Fra 400 NOK,-</td></tr><tr><td class="single-table-col single-col-one">HR</td><td class="single-table-col single-col-info"><div class="tooltip-container"><img src="./E-hub Agder_files/info.svg" alt="info"></div></td><td class="single-table-col single-col-alt">Fra 400 NOK,-</td></tr><tr><td class="single-table-col single-col-one">Mentor</td><td class="single-table-col single-col-info"><div class="tooltip-container"><img src="./E-hub Agder_files/info.svg" alt="info"></div></td><td class="single-table-col single-col-alt">Fra 400 NOK,-</td></tr><tr><td class="single-table-col single-col-one">Regnskapsfører</td><td class="single-table-col single-col-info"><div class="tooltip-container"><img src="./E-hub Agder_files/info.svg" alt="info"></div></td><td class="single-table-col single-col-alt">Fra 400 NOK,-</td></tr></tbody></table></div></div></div></div><div class="contact-section-hub"><div class="contact-card-body"><div class="contact-card-image"><img class="contact-card-person-image" src="./E-hub Agder_files/Eirik.jpeg" alt="Kontaktperson"></div><div class="contact-card-info"><p class="contact-card-title">Kontaktinfo</p><div class="contact-card-content"><p class="contact-card-text">Marius Sowka</p><p class="contact-card-text">+47 12 345 678</p><p class="contact-card-email">marius@dignitycollective.no</p><p class="contact-card-text">Vige Havnevei 6</p><div class="contact-card-socials"><div class="social-box"><a class="contact-card-link" href="https://www.instagram.com/dignitycollective/"><img class="social-icon" src="./E-hub Agder_files/instagram.svg" alt="instagram"></a></div><div class="social-box"><a class="contact-card-link" href="https://no.linkedin.com/company/dignity-collective-as"><img class="social-icon" src="./E-hub Agder_files/linkedin.svg" alt="linked-in"></a></div></div></div></div></div></div><div class="collaborators-section"><div class="hub-width"><div class="collaborators-row"><h1 class="collaborators-title">BEDRIFTER VI SAMARBEIDER MED:</h1></div><div class="collaborators-cards-row"><div class="collaborators-cards"><a href="https://www.dignitycollective.no/"><div class="collaborators-card"><img class="collaborators-logo" src="./E-hub Agder_files/dignitycollectivelogo.jpg" alt="bedrift logo"></div></a><a href="https://www.dignitycollective.no/"><div class="collaborators-card"><img class="collaborators-logo" src="./E-hub Agder_files/dignitycollectivelogo.jpg" alt="bedrift logo"></div></a><a href="https://www.dignitycollective.no/"><div class="collaborators-card"><img class="collaborators-logo" src="./E-hub Agder_files/dignitycollectivelogo.jpg" alt="bedrift logo"></div></a></div></div></div></div><footer class="footer"><img class="footer-box" src="./E-hub Agder_files/Box-illustration-footer.svg" alt="Boks illustrasjon"><div class="footer-links"><div class="footer-column"><h3>Er du en E-hub eier?</h3><a href="http://localhost:5174/login"><button data-testid="login-button-footer" class="btn white">Logg inn</button></a></div><div class="footer-column"><h3>Sider</h3><ul><li><a href="http://localhost:5174/">Hjem</a></li><li><a href="http://localhost:5174/about">Om oss</a></li><li><a href="http://localhost:5174/HubDignity">Dignity Collective</a></li><li><a href="http://localhost:5174/HubJdd">JDD Utstyr</a></li></ul></div><div class="footer-column"><h3>Kontakt</h3><p>KristiansadBR@mail.no</p><p>909 09 090</p><p>Besøksadresse</p></div><div class="footer-column"><h3>Følg oss</h3><a href="https://www.linkedin.com/" class="footer-linkedin">LinkedIn</a></div><div class="footer-column"><h3>Ønsker du å ta del i en Agder e-hub?</h3><a href="http://localhost:5174/apply"><button data-testid="apply-button-footer" class="btn white">Send søknad</button></a></div></div></footer></div>
+    <script type="module" src="./E-hub Agder_files/main.tsx"></script>
+  
+
+</body></html>
